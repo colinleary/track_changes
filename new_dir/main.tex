@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+%fartboner420
+\newpage
+\clearpage
+\usepackage{geometry} % sets more standardized margins
+\geometry{letterpaper,
+left=1.5in,
+right=1in,
+top=1in,
+bottom=1in}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{calc} % some graphics functions I use 
+\graphicspath{{figures/}}
+\usepackage{abstract} % abstract function
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{soul}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{setspace}
+\usepackage{hyperref}    % make hyperlinks for easy navigation
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}  % allows for highlighting
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\newcommand{\n}{\par}
+\newcommand{\p}{\par\hspace{1em}}
+
+\renewcommand{\absnamepos}{flushleft} % left justifies abstract
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\newcolumntype{L}{>{\centering\arraybackslash}m{12cm}}
+
+\linespread{1.3}
+
+\setlength{\parskip}{1em} % sets space between paragraphs
+\setlength{\parindent}{0em} % Left justifies paragraphs after a \par command 
+%\usepackage{nopageno}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\title{ \textbf{Tachometer for Sheaff's Buddy's Boat}}
+\author{Colin Leary, EE \\ Chris Martin, CE}
+\date{\today\\[2ex]%
+University of Maine\\%
+ECE403 Final Report}
+\maketitle
+\newpage
+\clearpage
+
+\pagenumbering{roman}
+\begin{abstract}
+\input{0_abstract}
+
+\end{abstract}
+\newpage
+\clearpage
+
+\begin{singlespacing}
+    \tableofcontents
+    \newpage
+    \clearpage
+    
+    \listoffigures
+    \newpage
+    \clearpage
+    
+    %\listoftables
+    %\newpage
+    %\clearpage
+\end{singlespacing}
+
+\section{Introduction}
+\label{sec:intro}
+\pagenumbering{arabic}
+\input{1_intro}
+
+
+\section{Breakdown}
+\label{sec:break}
+\input{2_breakdown}
+
+\section{Details}
+\label{sec:det}
+\input{3_details}
+
+\section{Results}
+\label{sec:res}
+\input{4_results}
+
+\section{Conclusion}
+\label{sec:con}
+\input{5_conclusion}
+
+\newpage
+\bibliography{references}
+\bibliographystyle{ieeetr}
+\newpage
+
+\appendix
+\renewcommand\pagenumbering[1]{}
+\section{Project Contract}
+\label{app:contract}
+\input{documents/contract}
+
+
+\section{Tachometer Schematic}
+\label{app:schem}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{documents/ps_schem}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{documents/analog_schem}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{documents/tach_schem1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.95\textwidth]{documents/tach_schem2}
+\end{figure}
+
+\newpage\clearpage
+\section{Parts List}
+\label{app:parts}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{documents/bom_1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{documents/bom_2}
+\end{figure}
+
+\newpage\clearpage
+\section{User Documentation}
+\label{app:user}
+\input{documents/documentation}
+
+
+\end{document}
